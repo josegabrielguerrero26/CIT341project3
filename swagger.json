@@ -2,18 +2,18 @@
   "swagger": "2.0",
   "info": {
     "title": "API documentation",
-    "description": "MongoDb with contacts",
+    "description": "Recruiter App with MongoDb ",
     "version": "1.0.0"
   },
   "host": "l07.onrender.com",
   "basePath": "/",
   "tags": [
     {
-      "name": "Drivers",
-      "description": "Operations about drivers"
+      "name": "Users",
+      "description": "Operations about users"
     },
     {
-      "name": "Vehicles",
+      "name": "No updated yet - (Vehicles)",
       "description": "Operations about vehicles"
     },
     {
