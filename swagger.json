@@ -27,7 +27,7 @@
   "paths": {
     "/contacts/": {
       "get": {
-        "tags": ["Drivers"],
+        "tags": ["Usuarios"],
         "description": "",
         "produces": [
           "application/json"
@@ -40,7 +40,7 @@
         }
       },
       "post": {
-        "tags": ["Drivers"],
+        "tags": ["Usuarios"],
         "description": "",
         "parameters": [
           {
@@ -80,7 +80,7 @@
     },
     "/contacts/{id}": {
       "get": {
-        "tags": ["Drivers"],
+        "tags": ["Usuarios"],
         "description": "",
         "produces": [
           "application/json"
@@ -100,7 +100,7 @@
         }
       },
       "put": {
-        "tags": ["Drivers"],
+        "tags": ["Usuarios"],
         "description": "",
         "parameters": [
           {
@@ -144,7 +144,7 @@
         }
       },
       "delete": {
-        "tags": ["Drivers"],
+        "tags": ["Usuarios"],
         "description": "",
         "parameters": [
           {
