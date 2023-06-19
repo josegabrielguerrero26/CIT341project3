@@ -13,7 +13,7 @@
       "description": "Operations about users"
     },
     {
-      "name": "No updated yet - (Vehicles)",
+      "name": "Vehicles",
       "description": "Operations about vehicles"
     },
     {
@@ -27,7 +27,7 @@
   "paths": {
     "/contacts/": {
       "get": {
-        "tags": ["Usuarios"],
+        "tags": ["Users"],
         "description": "",
         "produces": [
           "application/json"
@@ -40,7 +40,7 @@
         }
       },
       "post": {
-        "tags": ["Usuarios"],
+        "tags": ["Users"],
         "description": "",
         "parameters": [
           {
@@ -80,7 +80,7 @@
     },
     "/contacts/{id}": {
       "get": {
-        "tags": ["Usuarios"],
+        "tags": ["Users"],
         "description": "",
         "produces": [
           "application/json"
@@ -100,7 +100,7 @@
         }
       },
       "put": {
-        "tags": ["Usuarios"],
+        "tags": ["Users"],
         "description": "",
         "parameters": [
           {
@@ -144,7 +144,7 @@
         }
       },
       "delete": {
-        "tags": ["Usuarios"],
+        "tags": ["Users"],
         "description": "",
         "parameters": [
           {
