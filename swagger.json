@@ -5,7 +5,7 @@
     "description": "Recruiter App with MongoDb ",
     "version": "1.0.0"
   },
-  "host": "l07.onrender.com",
+  "host": "cit341teamproject.onrender.com",
   "basePath": "/",
   "tags": [
     {
