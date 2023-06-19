@@ -1,5 +1,4 @@
-# CSE341 Project2
-Webapi project 2
+# CSE341 Project3
+Webapi project 3- Recruiter app
 
-This is an API connected to a Mongo DB with two collections.
-User collection and the vehicle collections.
+This is an API connected to a Mongo DB with 3 collections.
