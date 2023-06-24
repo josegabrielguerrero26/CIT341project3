@@ -19,6 +19,7 @@ function(req, res) {
 
 router.use('/contacts',isLoggedIn, require('./contacts'));
 router.use('/veh',isLoggedIn, require('./veh'));
+// router.use('/jobs',isLoggedIn, require('./jobs'));
 
 router.use('/', isLoggedIn,require('./swagger'));
 

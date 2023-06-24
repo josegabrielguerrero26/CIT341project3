@@ -2,12 +2,17 @@
 GET http://localhost:8080/contacts/ HTTP/1.1
 ### local geet vehicles
 GET http://localhost:8080/veh/ HTTP/1.1
-
+### local get jobs
+### GET http://localhost:8080/jobs/ HTTP/1.1
 
 ### local get 1 user
 GET http://localhost:8080/contacts/64664c75b58455bf86dfa720 HTTP/1.1
 ### local get 1 user
 GET http://localhost:8080/veh/646667a9bcfda6fdb0a32d0c HTTP/1.1
+### local get 1 job
+### GET http://localhost:8080/jobs/id/64964b7b9a9463d53df0e7e0 HTTP/1.1
+### local get 1 job
+### GET http://localhost:8080/jobs/position/Software Engineering HTTP/1.1
 
 ### Create contact User
 POST http://localhost:8080/contacts HTTP/1.1
@@ -33,6 +38,33 @@ Content-Type: application/json
         "Curr_value": 265491,
         "Curr_odom": 16
 }
+### Create job
+# POST http://localhost:8080/jobs HTTP/1.1
+# Content-Type: application/json
+
+# {
+#   "title": "Software Developer",
+#   "position": "Software Engineering",
+#   "company": "ExampleTech",
+#   "location": "Example City",
+#   "description": "We are seeking a software developer with experience in JavaScript and modern frameworks.",
+#   "requirements": [
+#     "Minimum 2 years of software development experience.",
+#     "Strong knowledge of JavaScript and frameworks such as React or Angular.",
+#     "Ability to work in a team and communicate effectively."
+#   ],
+#   "skills": [
+#     "JavaScript",
+#     "React",
+#     "Angular",
+#     "Node.js"
+#   ],
+#   "salary": {
+#     "currency": "USD",
+#     "amount": 50000
+#   }
+# }
+
 
 ### PUT contact 
 PUT http://localhost:8080/contacts/64664c75b58455bf86dfa720 HTTP/1.1
@@ -47,7 +79,7 @@ Content-Type: application/json
 }
 ### PUT vehicle 
 PUT http://localhost:8080/veh/646667a9bcfda6fdb0a32d0c HTTP/1.1
-Content-Type: application/json 
+Content-Type: application/json
 
 {
         "Veh_number": "TESTUpdated",
@@ -58,9 +90,38 @@ Content-Type: application/json
         "Curr_value": 265491,
         "Curr_odom": 16
 }
+### Update job
+# PUT http://localhost:8080/jobs/64964b7b9a9463d53df0e7e0 HTTP/1.1
+# Content-Type: application/json
+
+# {
+#   "title": "Modified Software Developer",
+#   "position": "Modified Software Engineering",
+#   "company": "Modified ExampleTech",
+#   "location": "Modified Example City",
+#   "description": "We are seeking a software developer with experience in JavaScript and modern frameworks.",
+#   "requirements": [
+#     "Minimum 2 years of software development experience.",
+#     "Strong knowledge of JavaScript and frameworks such as React or Angular.",
+#     "Ability to work in a team and communicate effectively."
+#   ],
+#   "skills": [
+#     "JavaScript",
+#     "React",
+#     "Angular",
+#     "Node.js"
+#   ],
+#   "salary": {
+#     "currency": "USD",
+#     "amount": 50000
+#   }
+# }
 
 ### DELETE contact 
 DELETE http://localhost:8080/contacts/64664c75b58455bf86dfa720 HTTP/1.1
 
 ### DELETE vehicle 
 DELETE http://localhost:8080/veh/646667a9bcfda6fdb0a32d0c HTTP/1.1
+
+# ### DELETE job 
+# DELETE http://localhost:8080/jobs/64664c75b58455bf86dfa720 HTTP/1.1
