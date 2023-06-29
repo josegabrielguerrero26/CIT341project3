@@ -11,7 +11,7 @@ const getAllUsers = async (req, res) => {
 
 const getSingleUser = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid contact id to find the user.');
+    res.status(400).json('Must use a valid user id to find the user.');
   }
   const userId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db('team-project').collection('users').find({ _id: userId });
@@ -21,17 +21,44 @@ const getSingleUser = async (req, res) => {
   });
 };
 
-const createContact = async (req, res) => {
-  const contact = {
+const getBySkill = async(req, res) => {
+  if (!ObjectId.isValid(req.params.skill)) {
+    res.status(400).json('Must use a valid skill to find the users.');
+  }
+  const userSkill = new ObjectId(req.params.skill);
+  const result = await mongodb.getDb().db('team-project').collection('users').find({skill: userSkill });
+
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]);
+  })
+}
+
+const getByUserName = async(req, res) => {
+  if (!ObjectId.isValid(req.params.firstName)) {
+    res.status(400).json('Must use a valid user name to find the user.');
+  }
+  const userName = new ObjectId(req.params.firstName);
+  const result = await mongodb.getDb().db('team-project').collection('users').find({firstName: userName });
+
+  result.toArray().then((lists) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]);
+  })
+}
+
+const createUser = async (req, res) => {
+  const user = {
     firstName: req.body.first_name,
     lastName: req.body.last_name,
     birthday: req.body.birthday,
     email: req.body.email,
+    password: req.body.password,
     city: req.body.city,
     major: req.body.major,
-    skills: req.body.skills
+    skill: req.body.skill
     };
-    const response = await mongodb.getDb().db('team-project').collection('users').insertOne(contact);
+    const response = await mongodb.getDb().db('team-project').collection('users').insertOne(user);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
@@ -39,7 +66,7 @@ const createContact = async (req, res) => {
   }
 };
 
-const updateUser = async (req, res) => {
+const updateByUserId = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid user id to update a driver.');
   } 
@@ -50,15 +77,16 @@ const updateUser = async (req, res) => {
     lastName: req.body.last_name,
     birthday: req.body.birthday,
     email: req.body.email,
+    password: req.body.password,
     city: req.body.city,
     major: req.body.major,
-    skills: req.body.skills
+    skill: req.body.skill
   };
   const response =  await mongodb
     .getDb()
     .db('team-project')
     .collection('users')
-    .replaceOne({ _id: userId }, userId);
+    .replaceOne({ _id: userId }, user);
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).send();
@@ -67,7 +95,36 @@ const updateUser = async (req, res) => {
   }
 };
 
-const deleteUser = async (req, res) => {
+const updateByUserName = async (req, res) => {
+  if (!ObjectId.isValid(req.params.firstName)) {
+    res.status(400).json('Must use a valid user name to update a driver.');
+  } 
+  const userName = new ObjectId(req.params.firstName);
+  // be aware of updateOne if you only want to update specific fields
+  const user = {
+    firstName: req.body.first_name,
+    lastName: req.body.last_name,
+    birthday: req.body.birthday,
+    email: req.body.email,
+    password: req.body.password,
+    city: req.body.city,
+    major: req.body.major,
+    skill: req.body.skill
+  };
+  const response =  await mongodb
+    .getDb()
+    .db('team-project')
+    .collection('users')
+    .replaceOne({ firstName: userName }, user);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Error.');
+  }
+};
+
+const deleteByUserId = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid user id to delete a driver.');
   }
@@ -80,11 +137,28 @@ const deleteUser = async (req, res) => {
     res.status(500).json(response.error || 'Error occurred while deleting the user');
   }
 };
+const deleteByUserName = async (req, res) => {
+  if (!ObjectId.isValid(req.params.firstName)) {
+    res.status(400).json('Must use a valid user name to delete a driver.');
+  }
+  const userName = new ObjectId(req.params.firstName);
+  const response = await mongodb.getDb().db('team-project').collection('users').deleteOne({ firstName: userName }, true);
+  console.log(response);
+  if (response.deletedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Error occurred while deleting the user');
+  }
+};
 
 module.exports = {
   getAllUsers,
   getSingleUser,
+  getBySkill,
+  getByUserName,
   createUser,
-  updateUser,
-  deleteUser
+  updateByUserId,
+  updateByUserName,
+  deleteByUserId,
+  deleteByUserName
 };
