@@ -17,9 +17,10 @@ function(req, res) {
   res.redirect('/api-docs');
 });
 
-router.use('/contacts',isLoggedIn, require('./contacts'));
-router.use('/veh',isLoggedIn, require('./veh'));
-// router.use('/jobs',isLoggedIn, require('./jobs'));
+router.use("/jobs", isLoggedIn, require("./jobs"));
+router.use("/recruiters", isLoggedIn, require("./recruiters.js"));
+router.use("/users", isLoggedIn, require("./users.js"));
+// router.use("/applications", isLoggedIn, require("./applications.js"));
 
 router.use('/', isLoggedIn,require('./swagger'));
 

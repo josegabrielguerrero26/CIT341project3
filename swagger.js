@@ -5,8 +5,10 @@ const doc = {
     title: 'API documentation',
     description: 'MongoDb with contacts'
   },
-  host: 'cit341teamproject.onrender.com', // host: 'l06.onrender.com'
-  schemes: ['https '] //schemes: ['https']
+  host: 'cit341teamprojec.onrender.com',
+  // host: "localhost:8080",
+  schemes: ["https"],
+  // schemes: ['http']
 };
 
 const outputFile = './swagger.json';

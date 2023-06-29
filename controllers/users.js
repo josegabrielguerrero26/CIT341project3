@@ -2,6 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAllUsers = async (req, res) => {
+  // #swagger.tags = ['users']
   const result = await mongodb.getDb().db('team-project').collection('users').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -10,6 +11,7 @@ const getAllUsers = async (req, res) => {
 };
 
 const getSingleUser = async (req, res) => {
+  // #swagger.tags = ['users']
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid contact id to find the user.');
   }
@@ -21,7 +23,8 @@ const getSingleUser = async (req, res) => {
   });
 };
 
-const createContact = async (req, res) => {
+const createUser = async (req, res) => {
+  // #swagger.tags = ['users']
   const contact = {
     firstName: req.body.first_name,
     lastName: req.body.last_name,
@@ -40,6 +43,7 @@ const createContact = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
+  // #swagger.tags = ['users']
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid user id to update a driver.');
   } 
@@ -68,6 +72,7 @@ const updateUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
+  // #swagger.tags = ['users']
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid user id to delete a driver.');
   }
