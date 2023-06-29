@@ -4,8 +4,6 @@ const validation = require("../middleware/validateJob");
 const jobController = require("../controllers/jobs");
 const isLoggedIn = require("../middleware/auth.js");
 
-console.log("/jobs");
-
 router.get("/", isLoggedIn, jobController.getAllJobs);
 
 router.get("/position/:position", isLoggedIn, jobController.getJobsByPosition);

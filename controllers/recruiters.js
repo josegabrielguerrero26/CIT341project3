@@ -2,6 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAllRecruiters = async (req, res, next) => {
+  // #swagger.tags = ['recruiters']
   try {
     const result = await mongodb.getDb().db("team-project").collection("recruiters").find();
     result.toArray().then((lists) => {
@@ -14,6 +15,7 @@ const getAllRecruiters = async (req, res, next) => {
 };
 
 const getSingleRecruiter = async (req, res, next) => {
+  // #swagger.tags = ['recruiters']
   try {
     const userId = new ObjectId(req.params.id);
     const result = await mongodb
@@ -31,6 +33,7 @@ const getSingleRecruiter = async (req, res, next) => {
 };
 
 const createRecruiter = async (req, res) => {
+  // #swagger.tags = ['recruiters']
   try {
     const recruiter = {
       firstName: req.body.firstName,
@@ -51,6 +54,7 @@ const createRecruiter = async (req, res) => {
 };
 
 const updateRecruiter = async (req, res) => {
+  // #swagger.tags = ['recruiters']
   try {
     const userId = new ObjectId(req.params.id);
     const recruiter = {
@@ -76,6 +80,7 @@ const updateRecruiter = async (req, res) => {
 };
 
 const deleteRecruiter = async (req, res) => {
+  // #swagger.tags = ['recruiters']
   try {
     const userId = new ObjectId(req.params.id);
     const response = await mongodb
