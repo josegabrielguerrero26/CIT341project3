@@ -86,7 +86,7 @@ const deleteRecruiter = async (req, res) => {
     if (response.deletedCount > 0) {
       res.status(204).send();
     } else {
-      res.status(500).json(response.error || 'Some error occurred while deleting.');
+      res.status(500).json(response.error || 'Some error occurred while deleting the recruiter.');
     }
   } catch (err) {
     res.status(500).json(err);
