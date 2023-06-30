@@ -2,6 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAllUsers = async (req, res) => {
+  // #swagger.tags = ['users']
   const result = await mongodb.getDb().db('team-project').collection('users').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -10,6 +11,7 @@ const getAllUsers = async (req, res) => {
 };
 
 const getSingleUser = async (req, res) => {
+  // #swagger.tags = ['users']
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid user id to find the user.');
   }
@@ -48,7 +50,8 @@ const getByUserName = async(req, res) => {
 }
 
 const createUser = async (req, res) => {
-  const user = {
+  // #swagger.tags = ['users']
+  const contact = {
     firstName: req.body.first_name,
     lastName: req.body.last_name,
     birthday: req.body.birthday,
@@ -67,6 +70,8 @@ const createUser = async (req, res) => {
 };
 
 const updateByUserId = async (req, res) => {
+
+  // #swagger.tags = ['users']
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid user id to update a driver.');
   } 
@@ -85,8 +90,7 @@ const updateByUserId = async (req, res) => {
   const response =  await mongodb
     .getDb()
     .db('team-project')
-    .collection('users')
-    .replaceOne({ _id: userId }, user);
+    .collection('users')    .replaceOne({ _id: userId }, user);
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).send();
@@ -94,6 +98,7 @@ const updateByUserId = async (req, res) => {
     res.status(500).json(response.error || 'Error.');
   }
 };
+
 
 const updateByUserName = async (req, res) => {
   if (!ObjectId.isValid(req.params.firstName)) {
@@ -125,6 +130,9 @@ const updateByUserName = async (req, res) => {
 };
 
 const deleteByUserId = async (req, res) => {
+
+  // #swagger.tags = ['users']
+
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid user id to delete a driver.');
   }
@@ -137,6 +145,7 @@ const deleteByUserId = async (req, res) => {
     res.status(500).json(response.error || 'Error occurred while deleting the user');
   }
 };
+
 const deleteByUserName = async (req, res) => {
   if (!ObjectId.isValid(req.params.firstName)) {
     res.status(400).json('Must use a valid user name to delete a driver.');

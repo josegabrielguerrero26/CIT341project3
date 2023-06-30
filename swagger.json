@@ -2,32 +2,70 @@
   "swagger": "2.0",
   "info": {
     "title": "API documentation",
-    "description": "Recruiter App with MongoDb ",
+    "description": "MongoDb with contacts",
     "version": "1.0.0"
   },
-  "host": "cit341teamproject.onrender.com",
+  "host": "cit341teamprojec.onrender.com",
   "basePath": "/",
-  "tags": [
-    {
-      "name": "Users",
-      "description": "Operations about users"
-    },
-    {
-      "name": "Vehicles",
-      "description": "Operations about vehicles"
-    },
-    {
-    "name": "Information",
-    "description": "General Information"
-    }
-  ],
   "schemes": [
     "https"
   ],
   "paths": {
-    "/contacts/": {
+    "/": {
       "get": {
-        "tags": ["Users"],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/auth": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/auth/error": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/oauth-callback": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/": {
+      "get": {
+        "tags": [
+          "jobs"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -36,11 +74,418 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       },
       "post": {
-        "tags": ["Users"],
+        "tags": [
+          "jobs"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "position": {
+                  "example": "any"
+                },
+                "company": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "requirements": {
+                  "example": "any"
+                },
+                "salary": {
+                  "example": "any"
+                },
+                "skills": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/jobs/position/{position}": {
+      "get": {
+        "tags": [
+          "jobs"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "position",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/id/{idJob}": {
+      "get": {
+        "tags": [
+          "jobs"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "idJob",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/jobs/{idJob}": {
+      "put": {
+        "tags": [
+          "jobs"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "idJob",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "example": "any"
+                },
+                "position": {
+                  "example": "any"
+                },
+                "company": {
+                  "example": "any"
+                },
+                "location": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "requirements": {
+                  "example": "any"
+                },
+                "salary": {
+                  "example": "any"
+                },
+                "skills": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "jobs"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "idJob",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/recruiters/": {
+      "get": {
+        "tags": [
+          "recruiters"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "recruiters"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "company": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/recruiters/{id}": {
+      "get": {
+        "tags": [
+          "recruiters"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "recruiters"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "company": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "recruiters"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -55,13 +500,19 @@
                 "last_name": {
                   "example": "any"
                 },
+                "birthday": {
+                  "example": "any"
+                },
                 "email": {
                   "example": "any"
                 },
                 "city": {
                   "example": "any"
                 },
-                "birthday": {
+                "major": {
+                  "example": "any"
+                },
+                "skills": {
                   "example": "any"
                 }
               }
@@ -72,15 +523,23 @@
           "201": {
             "description": "Created"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       }
     },
-    "/contacts/{id}": {
+    "/users/{id}": {
       "get": {
-        "tags": ["Users"],
+        "tags": [
+          "users"
+        ],
         "description": "",
         "produces": [
           "application/json"
@@ -96,11 +555,19 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       },
       "put": {
-        "tags": ["Users"],
+        "tags": [
+          "users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -121,13 +588,19 @@
                 "last_name": {
                   "example": "any"
                 },
+                "birthday": {
+                  "example": "any"
+                },
                 "email": {
                   "example": "any"
                 },
                 "city": {
                   "example": "any"
                 },
-                "birthday": {
+                "major": {
+                  "example": "any"
+                },
+                "skills": {
                   "example": "any"
                 }
               }
@@ -137,6 +610,15 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error"
@@ -144,7 +626,9 @@
         }
       },
       "delete": {
-        "tags": ["Users"],
+        "tags": [
+          "users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -158,156 +642,11 @@
           "204": {
             "description": "No Content"
           },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/veh/": {
-      "get": {
-        "tags": ["Vehicles"],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": ["Vehicles"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Veh_number": {
-                  "example": "any"
-                },
-                "Year": {
-                  "example": "any"
-                },
-                "Model": {
-                  "example": "any"
-                },
-                "Vin": {
-                  "example": "any"
-                },
-                "Purch_date": {
-                  "example": "any"
-                },
-                "Curr_value": {
-                  "example": "any"
-                },
-                "Curr_odom": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
+          "400": {
+            "description": "Bad Request"
           },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/veh/{id}": {
-      "get": {
-        "tags": ["Vehicles"],
-        "description": "",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "tags": ["Vehicles"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "Veh_number": {
-                  "example": "any"
-                },
-                "Year": {
-                  "example": "any"
-                },
-                "Model": {
-                  "example": "any"
-                },
-                "Vin": {
-                  "example": "any"
-                },
-                "Purch_date": {
-                  "example": "any"
-                },
-                "Curr_value": {
-                  "example": "any"
-                },
-                "Curr_odom": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "delete": {
-        "tags": ["Vehicles"],
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
+          "401": {
+            "description": "Unauthorized"
           },
           "500": {
             "description": "Internal Server Error"
@@ -317,10 +656,13 @@
     },
     "/api-docs": {
       "get": {
-        "tags": ["Information"],
         "description": "",
         "parameters": [],
-        "responses": {}
+        "responses": {
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
       }
     }
   }
