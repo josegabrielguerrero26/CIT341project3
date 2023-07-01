@@ -52,8 +52,8 @@ const getByUserName = async(req, res) => {
 const createUser = async (req, res) => {
   // #swagger.tags = ['users']
   const contact = {
-    firstName: req.body.first_name,
-    lastName: req.body.last_name,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     birthday: req.body.birthday,
     email: req.body.email,
     password: req.body.password,
@@ -78,8 +78,8 @@ const updateByUserId = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   // be aware of updateOne if you only want to update specific fields
   const user = {
-    firstName: req.body.first_name,
-    lastName: req.body.last_name,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     birthday: req.body.birthday,
     email: req.body.email,
     password: req.body.password,
@@ -107,8 +107,8 @@ const updateByUserName = async (req, res) => {
   const userName = new ObjectId(req.params.firstName);
   // be aware of updateOne if you only want to update specific fields
   const user = {
-    firstName: req.body.first_name,
-    lastName: req.body.last_name,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
     birthday: req.body.birthday,
     email: req.body.email,
     password: req.body.password,
