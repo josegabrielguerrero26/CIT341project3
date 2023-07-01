@@ -8,7 +8,7 @@ const saveUser = (req, res, next) => {
     email: 'required|email',
     city: 'required|string',
     major: 'required|string',
-    skill: 'required|string'
+    skills: 'required|string'
   };
 
   validator(req.body, validationRule, {}, (err, status) => {
