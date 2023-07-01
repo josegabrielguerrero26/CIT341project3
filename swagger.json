@@ -321,10 +321,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "first_name": {
                   "example": "any"
                 },
-                "lastName": {
+                "last_name": {
                   "example": "any"
                 },
                 "email": {
@@ -403,10 +403,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "first_name": {
                   "example": "any"
                 },
-                "lastName": {
+                "last_name": {
                   "example": "any"
                 },
                 "email": {
