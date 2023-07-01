@@ -51,7 +51,7 @@ const getByUserName = async(req, res) => {
 
 const createUser = async (req, res) => {
   // #swagger.tags = ['users']
-  const contact = {
+  const user = {
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     birthday: req.body.birthday,
