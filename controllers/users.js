@@ -56,7 +56,6 @@ const createUser = async (req, res) => {
     last_name: req.body.last_name,
     birthday: req.body.birthday,
     email: req.body.email,
-    password: req.body.password,
     city: req.body.city,
     major: req.body.major,
     skill: req.body.skill
