@@ -1,7 +1,7 @@
 [
     {
-        "first_name": "Christ",
-        "last_name": "Evans",
+        "firstName": "Christ",
+        "lastName": "Evans",
         "birthday":"03/26/1988",
         "email":"cevas.@gmail.com",
         "password":"test",
@@ -10,8 +10,8 @@
         "skills":"Karate"
     },
     {
-        "first_name": "Daniel",
-        "last_name": "Thord",
+        "firstName": "Daniel",
+        "lastName": "Thord",
         "birthday":"03/26/1988",
         "email":"cevas.@gmail.com",
         "password":"test",
@@ -19,8 +19,8 @@
         "major":"Finance",
         "skills":"Financial Reporting"    },
     {
-        "first_name": "Trina",
-        "last_name": "Smith",
+        "firstName": "Trina",
+        "lastName": "Smith",
         "birthday":"03/26/1956",
         "email":"tr.@gmail.com",
         "password":"test",

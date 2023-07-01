@@ -494,10 +494,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "first_name": {
+                "firstName": {
                   "example": "any"
                 },
-                "last_name": {
+                "lastName": {
                   "example": "any"
                 },
                 "birthday": {
