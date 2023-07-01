@@ -2,22 +2,29 @@
     {
         "first_name": "Christ",
         "last_name": "Evans",
+        "birthday":"03/26/1988",
         "email":"cevas.@gmail.com",
+        "password":"test",
         "city":"Salt Lake",
-        "birthday":"03/26/1988"
+        "major":"Social Work",
+        "skills":"Karate"
     },
     {
-        "first_name": "Donna",
-        "last_name": "Murray",
-        "email":"mmurray@gmail.com",
-        "city":"Las Vegas",
-        "birthday":"12/26/1977"
-    },
+        "first_name": "Daniel",
+        "last_name": "Thord",
+        "birthday":"03/26/1988",
+        "email":"cevas.@gmail.com",
+        "password":"test",
+        "city":"Austin",
+        "major":"Finance",
+        "skills":"Financial Reporting"    },
     {
-        "first_name": "Timoty",
+        "first_name": "Trina",
         "last_name": "Smith",
-        "email":"Tsmith@gmail.com",
-        "city":"New York",
-        "birthday":"01/22/1989"
-    }
+        "birthday":"03/26/1956",
+        "email":"tr.@gmail.com",
+        "password":"test",
+        "city":"Provo",
+        "major":"Social Work",
+        "skills":"N/A"    }
 ]
