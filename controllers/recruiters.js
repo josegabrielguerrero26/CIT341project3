@@ -38,6 +38,7 @@ const createRecruiter = async (req, res) => {
     const recruiter = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
+      birthday: req.body.birthday,
       email: req.body.email,
       company: req.body.company,
       phone: req.body.phone
@@ -60,6 +61,7 @@ const updateRecruiter = async (req, res) => {
     const recruiter = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
+      birthday: req.body.birthday,
       email: req.body.email,
       company: req.body.company,
       phone: req.body.phone

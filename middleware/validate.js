@@ -5,8 +5,8 @@ const saveContact = (req, res, next) => {
     first_name: 'required|string',
     last_name: 'required|string',
     email: 'required|email',
-    city: 'required|string',
-    birthday: 'string'
+    company: 'required|string',
+    phone: 'string'
   };
 
 
