@@ -6,8 +6,10 @@ const saveUser = (req, res, next) => {
     first_name: 'required|string',
     last_name: 'required|string',
     email: 'required|email',
+    birthday: 'string',
+    password : 'required|string',
     city: 'string',
-    birthday: 'string'
+    major : 'required|string'
   };
 
   validator(req.body, validationRule, {}, (err, status) => {
