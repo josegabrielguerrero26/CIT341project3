@@ -1,5 +1,4 @@
 const Validator = require('validatorjs');
-
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]/;
 
 Validator.register('strict', value => passwordRegex.test(value),'password must contain at least one uppercase letter, one lowercase letter and one number');

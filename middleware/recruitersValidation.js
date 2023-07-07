@@ -9,7 +9,6 @@ const saveRecruiter = (req, res, next) => {
     phone: 'required|numeric'
   };
 
-
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
       res.status(412).send({
@@ -22,8 +21,6 @@ const saveRecruiter = (req, res, next) => {
     }
   });
 };
-
-
 
 module.exports = {
   saveRecruiter,

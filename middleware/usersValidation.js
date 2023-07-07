@@ -12,7 +12,6 @@ const saveUser = (req, res, next) => {
     skill: 'required|string'
   };
 
-
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
       res.status(412).send({
