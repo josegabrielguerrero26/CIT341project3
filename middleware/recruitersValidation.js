@@ -1,17 +1,12 @@
-//Validate USERS
 const validator = require('../helper/validate');
 
-const saveUser = (req, res, next) => {
+const saveRecruiter = (req, res, next) => {
   const validationRule = {
     firstName: 'required|string',
     lastName: 'required|string',
-    birthday: 'string',
     email: 'required|email',
-    password: 'required|string|min:6|confirmed|strict',
-    city: 'required|string',
-    major: 'required|string',
-    skill: 'required|string'
-
+    company: 'required|string',
+    phone: 'required|numeric'
   };
 
 
@@ -31,5 +26,5 @@ const saveUser = (req, res, next) => {
 
 
 module.exports = {
-  saveUser,
+  saveRecruiter,
 };
