@@ -11,7 +11,6 @@ const saveUser = (req, res, next) => {
     city: 'required|string',
     major: 'required|string',
     skill: 'required|string'
-
   };
 
   validator(req.body, validationRule, {}, (err, status) => {
