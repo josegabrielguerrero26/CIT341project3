@@ -5,15 +5,12 @@ const saveUser = (req, res, next) => {
   const validationRule = {
     firstName: 'required|string',
     lastName: 'required|string',
-    birthday: 'string',
     email: 'required|email',
-    password: 'required|string|min:6|confirmed|strict',
-    city: 'required|string',
-    major: 'required|string',
-    skill: 'required|string'
-
+    birthday: 'string',
+    password: 'required|string',
+    city: 'string',
+    major: 'required|string'
   };
-
 
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
