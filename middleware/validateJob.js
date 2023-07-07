@@ -7,12 +7,9 @@ const saveJob = (req, res, next) => {
     company: "required|string",
     location: "required|string",
     description: "required|string",
-    requirements: "array",
-    salary: {
-      currency: "required|string",
-      amount: "required|numeric",
-    },
-    skills: "array",
+    requirements: "string",
+    salary: "required|string",
+    skills: "string",
   };
 
   validator(req.body, validationRule, {}, (err, status) => {

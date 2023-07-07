@@ -1,0 +1,34 @@
+[
+    {
+        "firstName": "Adams",
+        "lastName": "Tacher",
+        "birthday":"03/26/1945",
+        "email":"at.@hertz.com",
+        "company":"Hertz",
+        "phone":"423-293-3422"
+    },
+    {
+        "firstName": "Aulia",
+        "lastName": "Mahoha",
+        "birthday":"02/26/1950",
+        "email":"am.@apple.com",
+        "company":"Apple",
+        "phone":"801-234-4553"
+    },
+    {
+        "firstName": "April",
+        "lastName": "Nani",
+        "birthday":"12/26/1978",
+        "email":"an.@nani.com",
+        "company":"Nani",
+        "phone":"919-234-2323"
+    },
+    {
+        "firstName": "Christ",
+        "lastName": "Evans",
+        "birthday":"01/26/2001",
+        "email":"ct.@tesla.com",
+        "company":"Tesla",
+        "phone":"808-232-2321"
+    }
+]

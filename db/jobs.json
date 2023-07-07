@@ -1,0 +1,34 @@
+[  
+    {
+    "title": "Tech ",
+    "position": "Tech Analyst",
+    "company": "Amazon",
+    "location": "Zambia",
+    "description": "Far Away",
+    "requirements":" Analyst, PHD, 15+ years",
+    "salary": "Negotiable",
+    "skills": "None"
+    },
+    
+    {
+        "title": "Tech 2 ",
+        "position": "Tech DB Master",
+        "company": "Qualtric",
+        "location": "USA",
+        "description": " DB Maintenance ",
+        "requirements":" Analyst, MBA, Master BI, 1+ years",
+        "salary": "150K ",
+        "skills": "Analyst"
+        },
+        
+    {
+        "title": "Needed ASAP Web Dev ",
+        "position": "Front End Engineer",
+        "company": "Ducky Corp",
+        "location": "USA- Mexico- Remote",
+        "description": "Do all the job",
+        "requirements":" BS Computer Sciences",
+        "salary": "40,000 ",
+        "skills": "DB, SQl, NOSQL"
+        }
+]
