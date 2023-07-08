@@ -8,9 +8,9 @@ router.get('/', recruitersController.getAllRecruiters);
 
 router.get('/:id', recruitersController.getSingleRecruiter);
 
-router.post('/', recruitersValidation.saveUser, recruitersController.createRecruiter);
+router.post('/', recruitersValidation.saveRecruiter, recruitersController.createRecruiter);
 
-router.put('/:id', recruitersValidation.saveUser, recruitersController.updateRecruiter);
+router.put('/:id', recruitersValidation.saveRecruiter, recruitersController.updateRecruiter);
 
 router.delete('/:id', recruitersController.deleteRecruiter);
 
