@@ -27,7 +27,7 @@ const getBySkill = async(req, res) => {
  /* if (!ObjectId.isValid(req.params.skill)) {
     res.status(400).json('Must use a valid skill to find the users.');
   }*/
-  const userSkill = new ObjectId(req.params.skill);
+  //const userSkill = new ObjectId(req.params.skill);
   const result = await mongodb.getDb().db('team-project').collection('users').find({skill: req.params.skill });
 
   result.toArray().then((lists) => {
@@ -40,7 +40,7 @@ const getByUserName = async(req, res) => {
   /*if (!ObjectId.isValid(req.params.firstName)) {
     res.status(400).json('Must use a valid user name to find the user.');
   }*/
-  const userName = new ObjectId(req.params.firstName);
+  //const userName = new ObjectId(req.params.firstName);
   const result = await mongodb.getDb().db('team-project').collection('users').find({firstName: req.params.firstName });
 
   result.toArray().then((lists) => {
