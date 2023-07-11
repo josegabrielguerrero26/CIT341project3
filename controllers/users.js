@@ -24,9 +24,9 @@ const getSingleUser = async (req, res) => {
 };
 
 const getBySkill = async(req, res) => {
-  if (!ObjectId.isValid(req.params.skill)) {
+ /* if (!ObjectId.isValid(req.params.skill)) {
     res.status(400).json('Must use a valid skill to find the users.');
-  }
+  }*/
   const userSkill = new ObjectId(req.params.skill);
   const result = await mongodb.getDb().db('team-project').collection('users').find({skill: userSkill });
 
@@ -37,9 +37,9 @@ const getBySkill = async(req, res) => {
 }
 
 const getByUserName = async(req, res) => {
-  if (!ObjectId.isValid(req.params.firstName)) {
+  /*if (!ObjectId.isValid(req.params.firstName)) {
     res.status(400).json('Must use a valid user name to find the user.');
-  }
+  }*/
   const userName = new ObjectId(req.params.firstName);
   const result = await mongodb.getDb().db('team-project').collection('users').find({firstName: userName });
 
@@ -101,9 +101,9 @@ const updateByUserId = async (req, res) => {
 
 
 const updateByUserName = async (req, res) => {
-  if (!ObjectId.isValid(req.params.firstName)) {
+  /*if (!ObjectId.isValid(req.params.firstName)) {
     res.status(400).json('Must use a valid user name to update a driver.');
-  } 
+  } */
   const userName = new ObjectId(req.params.firstName);
   // be aware of updateOne if you only want to update specific fields
   const user = {
@@ -147,9 +147,9 @@ const deleteByUserId = async (req, res) => {
 };
 
 const deleteByUserName = async (req, res) => {
-  if (!ObjectId.isValid(req.params.firstName)) {
+  /*if (!ObjectId.isValid(req.params.firstName)) {
     res.status(400).json('Must use a valid user name to delete a driver.');
-  }
+  }*/
   const userName = new ObjectId(req.params.firstName);
   const response = await mongodb.getDb().db('team-project').collection('users').deleteOne({ firstName: userName }, true);
   console.log(response);
