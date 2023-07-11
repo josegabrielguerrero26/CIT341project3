@@ -1,17 +1,35 @@
 const express = require('express');
 const router = express.Router();
-const usersValidation = require('../middleware/usersValidation');
+//const usersValidation = require('../middleware/usersValidation');
 
 const recruitersController = require('../controllers/recruiters');
 
-router.get('/', recruitersController.getAllRecruiters);
+const schema = require('../helper/validation_schema');
+const middleware = require('../middleware/validation_middleware');
+var bodyParser = require("body-parser");
+const cors = require('cors');
 
-router.get('/:id', recruitersController.getSingleRecruiter);
+router.use(cors());
+router.use(bodyParser.json());
 
-router.post('/', usersValidation.saveUser, recruitersController.createRecruiter);
+router.get('/', recruitersController.getAllRecruiters, (req, res) => {
+    
+});
 
-router.put('/:id', usersValidation.saveUser, recruitersController.updateRecruiter);
+router.get('/:id', recruitersController.getSingleRecruiter, (req, res) => {
+    
+});
 
-router.delete('/:id', recruitersController.deleteRecruiter);
+router.post('/', middleware(schema.validateRecruiter), recruitersController.createRecruiter, (req, res) => {
+    res.json(req.body);
+});
+
+router.put('/:id', middleware(schema.validateRecruiter), recruitersController.updateRecruiter, (req, res) => {
+    res.json(req.body);
+});
+
+router.delete('/:id', recruitersController.deleteRecruiter, (req, res) => {
+    
+});
 
 module.exports = router;

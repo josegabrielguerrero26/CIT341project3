@@ -1,21 +1,46 @@
 const express = require('express');
 const router = express.Router();
-const usersValidation = require('../middleware/usersValidation');
+//const usersValidation = require('../middleware/usersValidation');
 // const isLoggedIn = require('../middleware/auth');
 const usersController = require('../controllers/users');
+const schema = require('../helper/validation_schema');
+const middleware = require('../middleware/validation_middleware');
+var bodyParser = require('body-parser');
+const cors = require('cors');
 
-router.get('/', usersController.getAllUsers);
+router.use(cors());
+router.use(bodyParser.json());
 
-router.get('/:id', usersController.getSingleUser);
-router.get('/:skill', usersController.getBySkill);
-router.get('/:firstName', usersController.getByUserName);
+router.get('/', usersController.getAllUsers, (req, res) => {
+    
+});
 
-router.post('/', usersValidation.saveUser, usersController.createUser);
+router.get('/:id', usersController.getSingleUser, (req, res) => {
+    
+});
+router.get('/:skill', usersController.getBySkill, (req, res) => {
+    
+});
+router.get('/:firstName', usersController.getByUserName, (req, res) => {
+    
+});
 
-router.put('/:id', usersValidation.saveUser, usersController.updateByUserId);
-router.put('/:firstName', usersValidation.saveUser, usersController.updateByUserName);
+router.post('/', middleware(schema.validateUser), usersController.createUser, (req, res) => {
+    res.json(req.body); 
+});
 
-router.delete('/:id', usersController.deleteByUserId);
-router.delete('/:firstName', usersController.deleteByUserName);
+router.put('/:id', middleware(schema.validateUser), usersController.updateByUserId, (req, res) => {
+    res.json(req.body); 
+});
+router.put('/:firstName', middleware(schema.validateUser), usersController.updateByUserName, (req, res) => {
+    res.json(req.body); 
+});
+
+router.delete('/:id', usersController.deleteByUserId, (req, res) => {
+    
+});
+router.delete('/:firstName', usersController.deleteByUserName, (req, res) => {
+    
+});
 
 module.exports = router;
