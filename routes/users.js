@@ -18,10 +18,10 @@ router.get('/', usersController.getAllUsers, (req, res) => {
 router.get('/:id', usersController.getSingleUser, (req, res) => {
     
 });
-router.get('/:skill', usersController.getBySkill, (req, res) => {
+router.get('/skill/:skill', usersController.getBySkill, (req, res) => {
     
 });
-router.get('/:firstName', usersController.getByUserName, (req, res) => {
+router.get('/firstName/:firstName', usersController.getByUserName, (req, res) => {
     
 });
 
@@ -32,14 +32,14 @@ router.post('/', middleware(schema.validateUser), usersController.createUser, (r
 router.put('/:id', middleware(schema.validateUser), usersController.updateByUserId, (req, res) => {
     res.json(req.body); 
 });
-router.put('/:firstName', middleware(schema.validateUser), usersController.updateByUserName, (req, res) => {
+router.put('/firstName/:firstName', middleware(schema.validateUser), usersController.updateByUserName, (req, res) => {
     res.json(req.body); 
 });
 
 router.delete('/:id', usersController.deleteByUserId, (req, res) => {
     
 });
-router.delete('/:firstName', usersController.deleteByUserName, (req, res) => {
+router.delete('/firstName/:firstName', usersController.deleteByUserName, (req, res) => {
     
 });
 
