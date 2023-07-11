@@ -38,6 +38,7 @@ const validateUser = Joi.object({
     "any.required": `Password is required`,
   }),
   city: Joi.string().min(4).required(),
+  major: Joi.string().min(4).required(),
   skill: Joi.string().min(4).required(),
 })
 
