@@ -32,7 +32,7 @@ const getBySkill = async(req, res) => {
 
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
+    res.status(200).json(lists);
   })
 }
 
@@ -45,7 +45,7 @@ const getByUserName = async(req, res) => {
 
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists[0]);
+    res.status(200).json(lists);
   })
 }
 
