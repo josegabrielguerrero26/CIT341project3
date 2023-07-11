@@ -33,8 +33,8 @@ const getBySkill = async(req, res) => {
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
-  })
-}
+  });
+};
 
 const getByUserName = async(req, res) => {
   /*if (!ObjectId.isValid(req.params.firstName)) {
@@ -46,8 +46,8 @@ const getByUserName = async(req, res) => {
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
-  })
-}
+  });
+};
 
 const createUser = async (req, res) => {
   // #swagger.tags = ['users']
