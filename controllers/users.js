@@ -28,7 +28,7 @@ const getBySkill = async(req, res) => {
     res.status(400).json('Must use a valid skill to find the users.');
   }*/
   const userSkill = new ObjectId(req.params.skill);
-  const result = await mongodb.getDb().db('team-project').collection('users').find({skill: userSkill });
+  const result = await mongodb.getDb().db('team-project').collection('users').find({skill: req.params.skill });
 
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -41,7 +41,7 @@ const getByUserName = async(req, res) => {
     res.status(400).json('Must use a valid user name to find the user.');
   }*/
   const userName = new ObjectId(req.params.firstName);
-  const result = await mongodb.getDb().db('team-project').collection('users').find({firstName: userName });
+  const result = await mongodb.getDb().db('team-project').collection('users').find({firstName: req.params.firstName });
 
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -104,7 +104,7 @@ const updateByUserName = async (req, res) => {
   /*if (!ObjectId.isValid(req.params.firstName)) {
     res.status(400).json('Must use a valid user name to update a driver.');
   } */
-  const userName = new ObjectId(req.params.firstName);
+ // const userName = new ObjectId(req.params.firstName);
   // be aware of updateOne if you only want to update specific fields
   const user = {
     firstName: req.body.firstName,
@@ -120,7 +120,7 @@ const updateByUserName = async (req, res) => {
     .getDb()
     .db('team-project')
     .collection('users')
-    .replaceOne({ firstName: userName }, user);
+    .replaceOne({ firstName: req.params.firstName }, user);
   console.log(response);
   if (response.modifiedCount > 0) {
     res.status(204).send();
@@ -151,7 +151,7 @@ const deleteByUserName = async (req, res) => {
     res.status(400).json('Must use a valid user name to delete a driver.');
   }*/
   const userName = new ObjectId(req.params.firstName);
-  const response = await mongodb.getDb().db('team-project').collection('users').deleteOne({ firstName: userName }, true);
+  const response = await mongodb.getDb().db('team-project').collection('users').deleteOne({ firstName: req.params.firstName }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();
