@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
+
 //const usersValidation = require('../middleware/usersValidation');
 
+const recruitersValidation = require('../middleware/recruitersValidation');
 const recruitersController = require('../controllers/recruiters');
-
 const schema = require('../helper/validation_schema');
 const middleware = require('../middleware/validation_middleware');
 var bodyParser = require("body-parser");
@@ -19,6 +20,11 @@ router.get('/', recruitersController.getAllRecruiters, (req, res) => {
 router.get('/:id', recruitersController.getSingleRecruiter, (req, res) => {
     
 });
+
+router.post('/', recruitersValidation.saveRecruiter, recruitersController.createRecruiter);
+
+router.put('/:id', recruitersValidation.saveRecruiter, recruitersController.updateRecruiter);
+
 
 router.post('/', middleware(schema.validateRecruiter), recruitersController.createRecruiter, (req, res) => {
     res.json(req.body);
