@@ -682,9 +682,7 @@
             "description": "Unauthorized"
           }
         }
-      }
-    },
-    "/users/{firstName}": {
+      },
       "put": {
         "tags": ["users"],
         "description": "",
