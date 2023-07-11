@@ -682,7 +682,9 @@
             "description": "Unauthorized"
           }
         }
-      },
+      }
+    },
+    "/users/{firstName}": {
       "put": {
         "tags": ["users"],
         "description": "",
@@ -772,6 +774,8 @@
         }
       }
     },
+      
+    
     "/api-docs": {
       "get": {
         "description": "",
