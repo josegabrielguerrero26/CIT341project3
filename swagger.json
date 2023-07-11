@@ -632,7 +632,7 @@
         }
       }
     },
-    "/users/{skill}": {
+    "/users/skill/{skill}": {
       "get": {
         "tags": ["users"],
         "description": "",
@@ -658,7 +658,7 @@
         }
       }
     },
-    "/users/{firstName}": {
+    "/users/firstName/{firstName}": {
       "get": {
         "tags": ["users"],
         "description": "",
