@@ -20,20 +20,34 @@
     {
       "name": "recruiters",
       "description": ""
+    },
+    {
+      "name": "application",
+      "description": ""
     }
   ],
-  "paths": {
-    "/": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
+  "/application/{id}": {
+    "get": {
+      "tags": ["application"],
+      "description": "",
+      "produces": ["application/json"],
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "401": {
+          "description": "Unauthorized"
+        },
+        "500": {
+          "description": "Internal Server Error"
         }
       }
     },

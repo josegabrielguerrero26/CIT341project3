@@ -21,6 +21,7 @@ router.use(passport.session());
 router.use("/jobs", require("./jobs"));
 router.use("/recruiters", require("./recruiters.js"));
 router.use("/users", require("./users.js"));
+router.use("/application", require("./application.js"));
 
 // Swagger Routes with authentication middleware
 router.use("/", require("./swagger"));
