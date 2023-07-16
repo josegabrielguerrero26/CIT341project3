@@ -19,9 +19,40 @@ const getSingleRecruiter = async (req, res, next) => {
       res.status(500).json(err);
     }
   };
-
+  
+  const updateRecruiter = async (req, res) => {
+    // #swagger.tags = ['recruiters']
+    try {
+      const userId = new ObjectId(req.params.id);
+      const recruiter = {
+        firstName: req.body.first_name,
+        lastName: req.body.last_name,
+        position: req.body.position,
+        company: req.body.company,
+        salary: req.body.salary,
+        recruiter: req.body.recruiter,
+        phone: req.body.phone,
+        skills: req.bod.skills
+      };
+      const response = await mongodb
+        .getDb()
+        .db("team-project")
+        .collection("applications")
+        .replaceOne({ _id: userId }, recruiter);
+      if (response.modifiedCount > 0) {
+        res.status(204).send();
+      } else {
+        res.status(500).json(response.error || 'Some error occurred while updating.');
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  };
+  
+  
 
   
   module.exports = {
-    getSingleRecruiter
+    getSingleRecruiter,
+    updateRecruiter
   }
