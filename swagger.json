@@ -47,12 +47,6 @@
         "description": "",
         "parameters": [
           {
-            "name": "IdApp",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          },
-          {
             "name": "body",
             "in": "body",
             "schema": {
