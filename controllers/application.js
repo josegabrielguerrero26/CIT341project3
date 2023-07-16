@@ -36,8 +36,8 @@ const getSingleRecruiter = async (req, res, next) => {
     try {
       const userId = new ObjectId(req.params.id);
       const recruiter = {
-        firstName: req.body.first_name,
-        lastName: req.body.last_name,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         position: req.body.position,
         company: req.body.company,
         salary: req.body.salary,
@@ -76,10 +76,10 @@ const getSingleRecruiter = async (req, res, next) => {
     // #swagger.tags = ['recruiters']
     try {
       const recruiter = {
-        firstName: req.body.first_name,
-        lastName: req.body.last_name,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         position: req.body.position,
-        company: req.body.company,
+        company: req.body.position,
         salary: req.body.salary,
         recruiter: req.body.recruiter,
         phone: req.body.phone,
