@@ -7,9 +7,9 @@ const saveRecruiter = (req, res, next) => {
     position: 'required|string',
     company: 'required|string',
     salary: 'required|numeric',
-    recruiter: 'required|numeric',
-    phone: 'required|numeric',
-    skills: 'required|numeric'
+    recruiter: 'required|string',
+    phone: 'required|string',
+    skills: 'required|string'
 };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {

@@ -127,7 +127,31 @@
         }
       }
     },
+    "/application/position/{position}": {
+      "get": {
+        "tags": ["jobs"],
+        "description": "",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "position",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
 
+    
     "put": {
       "tags": ["users"],
       "description": "",
