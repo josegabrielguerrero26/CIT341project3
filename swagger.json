@@ -41,7 +41,8 @@
             "description": "Unauthorized"
           }
         }
-      },
+      }
+    },
     "/application/{id}": {
       "get": {
         "tags": ["application"],
