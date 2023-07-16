@@ -72,12 +72,35 @@ const getSingleRecruiter = async (req, res, next) => {
     });
   };
   
-  
+  const createRecruiter = async (req, res) => {
+    // #swagger.tags = ['recruiters']
+    try {
+      const recruiter = {
+        firstName: req.body.first_name,
+        lastName: req.body.last_name,
+        position: req.body.position,
+        company: req.body.company,
+        salary: req.body.salary,
+        recruiter: req.body.recruiter,
+        phone: req.body.phone,
+        skills: req.bod.skills
+      };
+      const response = await mongodb.getDb().db("team-project").collection("recruiters").insertOne(recruiter);
+      if (response.acknowledged) {
+        res.status(201).json(response);
+      } else {
+        res.status(500).json(response.error || 'Some error occurred while creating.');
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  };
 
   
   module.exports = {
     getAllRecruiters,
     getSingleRecruiter,
     updateRecruiter,
-    getJobsByPosition
+    getJobsByPosition,
+    createRecruiter
   }
