@@ -20,6 +20,11 @@ router.get('/:id', recruitersController.getSingleRecruiter, (req, res) => {
     
 });
 
+router.get("/position/:position", recruitersController.getJobsByPosition, (req, res) => {
+    
+});
+
+
 router.put('/:id', recruitersValidation.saveRecruiter, recruitersController.updateRecruiter);
 
 module.exports = router;

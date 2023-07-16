@@ -59,6 +59,18 @@ const getSingleRecruiter = async (req, res, next) => {
       res.status(500).json(err);
     }
   };
+  const getJobsByPosition = async (req, res) => {
+    // #swagger.tags = ['jobs']
+    const result = await mongodb
+      .getDb()
+      .db("team-project")
+      .collection("applications")
+      .find({ position: req.params.position });
+    result.toArray().then((lists) => {
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(lists);
+    });
+  };
   
   
 
@@ -66,5 +78,6 @@ const getSingleRecruiter = async (req, res, next) => {
   module.exports = {
     getAllRecruiters,
     getSingleRecruiter,
-    updateRecruiter
+    updateRecruiter,
+    getJobsByPosition
   }
