@@ -4,7 +4,7 @@ const router = express.Router();
 //const usersValidation = require('../middleware/usersValidation');
 
 const recruitersValidation = require('../middleware/recruitersValidation');
-const recruitersController = require('../controllers/recruiters');
+const recruitersController = require('../controllers/application');
 const schema = require('../helper/validation_schema');
 const middleware = require('../middleware/validation_middleware');
 var bodyParser = require("body-parser");
