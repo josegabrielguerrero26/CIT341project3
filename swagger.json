@@ -80,7 +80,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "title": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
                   "example": "any"
                 },
                 "position": {
@@ -89,16 +92,13 @@
                 "company": {
                   "example": "any"
                 },
-                "location": {
-                  "example": "any"
-                },
-                "description": {
-                  "example": "any"
-                },
-                "requirements": {
-                  "example": "any"
-                },
                 "salary": {
+                  "example": "any"
+                },
+                "recruiter": {
+                  "example": "any"
+                },
+                "phone": {
                   "example": "any"
                 },
                 "skills": {
