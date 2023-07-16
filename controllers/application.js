@@ -85,7 +85,7 @@ const getSingleRecruiter = async (req, res, next) => {
         phone: req.body.phone,
         skills: req.bod.skills
       };
-      const response = await mongodb.getDb().db("team-project").collection("recruiters").insertOne(recruiter);
+      const response = await mongodb.getDb().db("team-project").collection("applications").insertOne(recruiter);
       if (response.acknowledged) {
         res.status(201).json(response);
       } else {
