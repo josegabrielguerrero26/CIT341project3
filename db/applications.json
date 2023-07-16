@@ -1,0 +1,42 @@
+[
+    {
+        "firstName": "Adams",
+        "lastName": "Sander",
+        "position":"Tech Analyst",
+        "company":"Amazon",
+        "salary":"100,000",
+        "recruiter": "Dan Plate",
+        "phone":"423-293-3422",
+        "skills": "DB, PMP, Scrum Master"
+    },
+    {
+        "firstName": "Chris",
+        "lastName": "Tacher",
+        "position":"Tech Analyst",
+        "company":"Amazon",
+        "salary":"80,0000",
+        "recruiter": "Dan Plate",
+        "phone":"801-293-3422",
+        "skills": "PHP, Linux, SQL"
+    },     
+    {
+        "firstName": "John",
+        "lastName": "Ann",
+        "position":"Front End Engineer",
+        "company":"Ducky Corp",
+        "salary":"40,000",
+        "recruiter": "Dan Plate",
+        "phone":"808-293-3422",
+        "skills": "None"
+    },
+    {
+        "firstName": "Miranda",
+        "lastName": "Holsen",
+        "position":"Tech DB Master",
+        "company":"Qualtric",
+        "salary":"180,000",
+        "recruiter": "Ben Aff",
+        "phone":"201-293-3422",
+        "skills": "SQL"
+    }
+]

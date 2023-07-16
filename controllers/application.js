@@ -9,7 +9,7 @@ const getSingleRecruiter = async (req, res, next) => {
       const result = await mongodb
         .getDb()
         .db("team-project")
-        .collection("recruiters")
+        .collection("applications")
         .find({ _id: userId });
       result.toArray().then((lists) => {
         res.setHeader('Content-Type', 'application/json');
