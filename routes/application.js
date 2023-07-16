@@ -13,6 +13,9 @@ const cors = require('cors');
 router.use(cors());
 router.use(bodyParser.json());
 
+router.get('/', recruitersController.getAllRecruiters, (req, res) => {
+    
+});
 router.get('/:id', recruitersController.getSingleRecruiter, (req, res) => {
     
 });

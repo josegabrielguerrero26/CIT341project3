@@ -1,7 +1,18 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
-
+const getAllRecruiters = async (req, res, next) => {
+  // #swagger.tags = ['recruiters']
+  try {
+    const result = await mongodb.getDb().db("team-project").collection("applications").find();
+    result.toArray().then((lists) => {
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(lists);
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 const getSingleRecruiter = async (req, res, next) => {
     // #swagger.tags = ['recruiters']
     try {
@@ -53,6 +64,7 @@ const getSingleRecruiter = async (req, res, next) => {
 
   
   module.exports = {
+    getAllRecruiters,
     getSingleRecruiter,
     updateRecruiter
   }

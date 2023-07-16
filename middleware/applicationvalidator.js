@@ -24,6 +24,7 @@ const saveRecruiter = (req, res, next) => {
   });
 };
 
+
 module.exports = {
   saveRecruiter,
 };

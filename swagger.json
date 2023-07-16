@@ -27,6 +27,21 @@
     }
   ],
   "paths": {
+    "/application/": {
+    "get": {
+      "tags": ["jobs"],
+      "description": "",
+      "produces": ["application/json"],
+      "parameters": [],
+      "responses": {
+        "200": {
+          "description": "OK"
+        },
+        "401": {
+          "description": "Unauthorized"
+        }
+      }
+    },
     "/application/{id}": {
       "get": {
         "tags": ["application"],
