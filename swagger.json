@@ -63,8 +63,7 @@
             "description": "Unauthorized"
           }
         }
-      }
-    },
+      },
       "put": {
         "tags": ["application"],
         "description": "",
