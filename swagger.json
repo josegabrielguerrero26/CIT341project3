@@ -31,7 +31,14 @@
       "get": {
         "tags": ["application"],
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "position",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
