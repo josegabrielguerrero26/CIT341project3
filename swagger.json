@@ -27,13 +27,13 @@
     }
   ],
   "paths": {
-    "/application/": {
+    "/application/{id}": {
       "get": {
         "tags": ["application"],
         "description": "",
         "parameters": [
           {
-            "name": "position",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
