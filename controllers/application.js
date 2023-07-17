@@ -66,7 +66,7 @@ const updateRecruiter = async (req, res) => {
         recruiter: req.body.recruiter,
         salary: req.body.salary,
         phone: req.body.phone,
-        skill: req.bod.skill
+        skill: req.body.skill,
       };
       const response = await mongodb
         .getDb()
