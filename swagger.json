@@ -64,16 +64,16 @@
                 "company": {
                   "example": "any"
                 },
-                "salary": {
+                "recruiter": {
                   "example": "any"
                 },
-                "recruiter": {
+                "salary": {
                   "example": "any"
                 },
                 "phone": {
                   "example": "any"
                 },
-                "skills": {
+                "skill": {
                   "example": "any"
                 }
               }
