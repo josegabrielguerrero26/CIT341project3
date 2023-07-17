@@ -59,7 +59,7 @@ const validateapplication = Joi.object({
   lastName: Joi.string().required(),
   position: Joi.string(),
   company: Joi.string(),
-  recruiter: Joi.string(),
+  recruiters: Joi.string(),
   salary: Joi.number().required(),
   phone: Joi.number().integer().required(),
   skill: Joi.string().required()

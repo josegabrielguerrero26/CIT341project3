@@ -80,7 +80,7 @@ const getSingleRecruiter = async (req, res, next) => {
         lastName: req.body.lastName,
         position: req.body.position,
         company: req.body.company,
-        recruiter: req.body.recruiter,
+        recruiters: req.body.recruiters,
         salary: req.body.salary,
         phone: req.body.phone,
         skill: req.bod.skill
