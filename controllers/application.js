@@ -43,7 +43,7 @@ const getSingleRecruiter = async (req, res, next) => {
         recruiter: req.body.recruiter,
         salary: req.body.salary,
         phone: req.body.phone,
-        skill: req.bod.skills
+        skill: req.bod.skill
       };
       const response = await mongodb
         .getDb()
@@ -83,7 +83,7 @@ const getSingleRecruiter = async (req, res, next) => {
         recruiter: req.body.recruiter,
         salary: req.body.salary,
         phone: req.body.phone,
-        skill: req.bod.skills
+        skill: req.bod.skill
       };
       const response = await mongodb.getDb().db("team-project").collection("applications").insertOne(recruiter);
       if (response.acknowledged) {
