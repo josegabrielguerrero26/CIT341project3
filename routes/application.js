@@ -33,5 +33,8 @@ router.put('/:id', middleware(schema.validateapplication), recruitersController.
     res.json(req.body);
 });
 
+router.delete('/:id', recruitersController.deleteRecruiter, (req, res) => {
+    
+});
 
 module.exports = router;
