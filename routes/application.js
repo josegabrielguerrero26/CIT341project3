@@ -24,7 +24,7 @@ router.get("/position/:position", recruitersController.getJobsByPosition, (req, 
     
 });
 
-router.post('/', recruitersValidation.saveRecruiter, recruitersController.createRecruiter);
+router.post('/', recruitersController.createRecruiter);
 
 router.put('/:id', recruitersValidation.saveRecruiter, recruitersController.updateRecruiter);
 
