@@ -74,13 +74,12 @@ const getSingleRecruiter = async (req, res, next) => {
   
   const createRecruiter = async (req, res) => {
     // #swagger.tags = ['recruiters']
-    try {
       const recruiter = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         position: req.body.position,
         company: req.body.company,
-        recruiters: req.body.recruiters,
+        recruiter: req.body.recruiter,
         salary: req.body.salary,
         phone: req.body.phone,
         skill: req.bod.skill
@@ -91,9 +90,7 @@ const getSingleRecruiter = async (req, res, next) => {
       } else {
         res.status(500).json(response.error || 'Some error occurred while creating.');
       }
-    } catch (err) {
-      res.status(500).json(err);
-    }
+ 
   };
 
   
