@@ -94,13 +94,32 @@ const updateRecruiter = async (req, res) => {
       res.status(200).json(lists);
     });
   };
-  
+
+  const deleteRecruiter = async (req, res) => {
+    // #swagger.tags = ['recruiters']
+    try {
+      const userId = new ObjectId(req.params.id);
+      const response = await mongodb
+        .getDb()
+        .db("team-project")
+        .collection("applications")
+        .deleteOne({ _id: userId }, true);
+      if (response.deletedCount > 0) {
+        res.status(204).send();
+      } else {
+        res.status(500).json(response.error || 'Some error occurred while deleting the recruiter.');
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  };
 
   module.exports = {
     getAllRecruiters,
     getSingleRecruiter,
     createRecruiter,
     updateRecruiter,
-    getJobsByPosition
+    getJobsByPosition,
+    deleteRecruiter
  
   }
