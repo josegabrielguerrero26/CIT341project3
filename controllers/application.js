@@ -30,8 +30,31 @@ const getSingleRecruiter = async (req, res, next) => {
       res.status(500).json(err);
     }
   };
+  const createRecruiter = async (req, res) => {
+    // #swagger.tags = ['recruiters']
+    try {
+      const recruiter = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        position: req.body.position,
+        company: req.body.company,
+        recruiter: req.body.recruiter,
+        salary: req.body.salary,
+        phone: req.body.phone,
+        skill: req.body.skill,
+      };
+      const response = await mongodb.getDb().db("team-project").collection("recruiters").insertOne(recruiter);
+      if (response.acknowledged) {
+        res.status(201).json(response);
+      } else {
+        res.status(500).json(response.error || 'Some error occurred while creating.');
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  };
   
-  const updateRecruiter = async (req, res) => {
+const updateRecruiter = async (req, res) => {
     // #swagger.tags = ['recruiters']
     try {
       const userId = new ObjectId(req.params.id);
@@ -72,28 +95,7 @@ const getSingleRecruiter = async (req, res, next) => {
     });
   };
   
-  const createRecruiter = async (req, res) => {
-    // #swagger.tags = ['recruiters']
-      const newapp = {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        position: req.body.position,
-        company: req.body.company,
-        recruiter: req.body.recruiter,
-        salary: req.body.salary,
-        phone: req.body.phone,
-        skill: req.bod.skill
-      };
-      const response = await mongodb.getDb().db("team-project").collection("applications").insertOne(newapp);
-      if (response.acknowledged) {
-        res.status(201).json(response);
-      } else {
-        res.status(500).json(response.error || 'Some error occurred while creating.');
-      }
- 
-  };
 
-  
   module.exports = {
     getAllRecruiters,
     getSingleRecruiter,
