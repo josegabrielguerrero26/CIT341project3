@@ -24,11 +24,14 @@ router.get("/position/:position", recruitersController.getJobsByPosition, (req, 
     
 });
 
-router.post('/', recruitersController.createRecruiter, (req, res) => {
-    res.json(req.body); 
+
+router.post('/', middleware(schema.validateapplication), recruitersController.createRecruiter, (req, res) => {
+    res.json(req.body);
 });
 
+router.put('/:id', middleware(schema.validateapplication), recruitersController.updateRecruiter, (req, res) => {
+    res.json(req.body);
+});
 
-router.put('/:id', recruitersValidation.saveRecruiter, recruitersController.updateRecruiter);
 
 module.exports = router;

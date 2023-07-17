@@ -54,9 +54,14 @@ const validateRecruiter = Joi.object({
   phone: Joi.number().integer().min(10).required()
 })
 
+const validateapplication = Joi.object({
+  first_name: Joi.string().min(4).required(),
+  last_name: Joi.string().min(4).required(),
 
+})
 module.exports = {
   validateJob,
   validateRecruiter,
-  validateUser
+  validateUser,
+  validateapplication
 }
