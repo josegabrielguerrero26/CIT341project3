@@ -133,10 +133,10 @@
             "schema": {
               "type": "object",
               "properties": {
-                "first_name": {
+                "firstName": {
                   "example": "any"
                 },
-                "last_name": {
+                "lastName": {
                   "example": "any"
                 },
                 "position": {
@@ -145,16 +145,16 @@
                 "company": {
                   "example": "any"
                 },
-                "salary": {
+                "recruiters": {
                   "example": "any"
                 },
-                "recruiter": {
+                "salary": {
                   "example": "any"
                 },
                 "phone": {
                   "example": "any"
                 },
-                "skills": {
+                "skill": {
                   "example": "any"
                 }
               }
