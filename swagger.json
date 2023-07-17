@@ -290,17 +290,7 @@
         }
       }
     },
-    "/auth": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          }
-        }
-      }
-    },
+
     "/jobs/": {
       "get": {
         "tags": ["jobs"],
