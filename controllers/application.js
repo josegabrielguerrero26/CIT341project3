@@ -74,7 +74,7 @@ const getSingleRecruiter = async (req, res, next) => {
   
   const createRecruiter = async (req, res) => {
     // #swagger.tags = ['recruiters']
-      const recruiter = {
+      const newapp = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         position: req.body.position,
@@ -84,7 +84,7 @@ const getSingleRecruiter = async (req, res, next) => {
         phone: req.body.phone,
         skill: req.bod.skill
       };
-      const response = await mongodb.getDb().db("team-project").collection("applications").insertOne(recruiter);
+      const response = await mongodb.getDb().db("team-project").collection("applications").insertOne(newapp);
       if (response.acknowledged) {
         res.status(201).json(response);
       } else {

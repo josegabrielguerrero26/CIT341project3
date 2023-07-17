@@ -3,7 +3,7 @@ const router = express.Router();
 
 //const usersValidation = require('../middleware/usersValidation');
 
-const recruitersValidation = require('../middleware/applicationvalidator');
+//const recruitersValidation = require('../middleware/applicationvalidator');
 const recruitersController = require('../controllers/application');
 const schema = require('../helper/validation_schema');
 const middleware = require('../middleware/validation_middleware');
