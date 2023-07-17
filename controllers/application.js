@@ -39,7 +39,7 @@ const getSingleRecruiter = async (req, res, next) => {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         position: req.body.position,
-        company: req.body.company,
+        company: req.body.position,
         salary: req.body.salary,
         recruiter: req.body.recruiter,
         phone: req.body.phone,
@@ -100,7 +100,8 @@ const getSingleRecruiter = async (req, res, next) => {
   module.exports = {
     getAllRecruiters,
     getSingleRecruiter,
+    createRecruiter,
     updateRecruiter,
-    getJobsByPosition,
-    createRecruiter
+    getJobsByPosition
+ 
   }
