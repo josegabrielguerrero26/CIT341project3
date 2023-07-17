@@ -145,7 +145,7 @@
                 "company": {
                   "example": "any"
                 },
-                "recruiters": {
+                "recruiter": {
                   "example": "any"
                 },
                 "salary": {
