@@ -55,9 +55,9 @@ const validateRecruiter = Joi.object({
 })
 
 const validateapplication = Joi.object({
-  first_name: Joi.string().min(4).required(),
-  last_name: Joi.string().min(4).required(),
-
+  firstName: Joi.string().min(4).required(),
+  lastName: Joi.string().min(4).required(),
+  salary: Joi.number().required()
 })
 module.exports = {
   validateJob,
