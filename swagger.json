@@ -324,7 +324,7 @@
                 "salary": {
                   "example": "any"
                 },
-                "skills": {
+                "skill": {
                   "example": "any"
                 }
               }

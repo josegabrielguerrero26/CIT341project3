@@ -21,9 +21,6 @@ router.get('/:id', recruitersController.getSingleRecruiter, (req, res) => {
     
 });
 
-router.post('/', recruitersValidation.saveRecruiter, recruitersController.createRecruiter);
-
-router.put('/:id', recruitersValidation.saveRecruiter, recruitersController.updateRecruiter);
 
 
 router.post('/', middleware(schema.validateRecruiter), recruitersController.createRecruiter, (req, res) => {
